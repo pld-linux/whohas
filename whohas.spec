@@ -3,7 +3,7 @@ Summary(hu.UTF-8):	whohas egy parancssoros eszköz, amellyel különböző csoma
 Name:		whohas
 Version:	0.23
 Release:	0.1
-License:	MIT
+License:	GPL v2
 Group:		Applications/Terminal
 Source0:	http://www.philippwesche.org/200811/whohas/%{name}-%{version}.tar.gz
 # Source0-md5:	0895fb6353950fe2e686fa867aaf0416

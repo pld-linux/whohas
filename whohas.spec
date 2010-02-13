@@ -4,14 +4,13 @@ Summary(hu.UTF-8):	whohas egy parancssoros eszköz, amellyel különböző csoma
 Summary(pl.UTF-8):	Konsolowe narzędzie pozwalacjące przeszukiwać kilka list pakietów jednocześnie
 Name:		whohas
 Version:	0.24
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Applications/Terminal
 Source0:	http://www.philippwesche.org/200811/whohas/%{name}-%{version}.tar.gz
 # Source0-md5:	701e14a43ea5de2134d84fe0ecad50b9
 URL:		http://www.philippwesche.org/200811/whohas/intro.html
 BuildRequires:	rpm-perlprov >= 4.1-13
-Requires:	perl-libwww
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,7 +21,9 @@ openSUSE, Slackware (and linuxpackages.net), Source Mage, Ubuntu,
 FreeBSD, NetBSD, OpenBSD, Fink and MacPorts. whohas is written in Perl
 and was designed to help package maintainers find ebuilds, pkgbuilds
 and similar package definitions from other distributions to learn
-from. However, it can also be used by normal users who want to know:
+from.
+
+However, it can also be used by normal users who want to know:
  - Which distribution provides packages on which the user depends.
  - What version of a given package is in use in each distribution, or
    in each release of a distribution (implemented only for Debian).
@@ -34,6 +35,7 @@ Slackware (és a linuxpackages.net), Source Mage, Ubuntu, FreeBSD,
 NetBSD, OpenBSD, Fink és MacPorts támogatott. whohas Perl-ben íródott
 és a csomagkarbantartóknak segít ebuild-ek, pkgbuild-ek és hasonló
 csomagdefiníciók keresésében, hogy tanulhasson más disztribúciókból.
+
 Azonban egyszerű felhasználó is használhatja, aki tudni akarja, hogy
  - Melyik disztribúció szállítja a keresett csomagot
  - Az adott csomag mely verzióit használják az egyes disztribúciókban,
@@ -57,13 +59,15 @@ dowiedzieć:
 
 %prep
 %setup -q
+mv program/* .
+mv usr/share/man .
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_mandir}/de/man1}
-install program/whohas $RPM_BUILD_ROOT%{_bindir}
-install usr/share/man/man1/whohas.1 $RPM_BUILD_ROOT%{_mandir}/man1
-install usr/share/man/de/man1/whohas.1 $RPM_BUILD_ROOT%{_mandir}/de/man1
+install -p whohas $RPM_BUILD_ROOT%{_bindir}
+cp -a man/man1/whohas.1 $RPM_BUILD_ROOT%{_mandir}/man1
+cp -a man/de/man1/whohas.1 $RPM_BUILD_ROOT%{_mandir}/de/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT

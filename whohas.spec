@@ -10,8 +10,8 @@ Group:		Applications/Terminal
 Source0:	http://www.philippwesche.org/200811/whohas/%{name}-%{version}.tar.gz
 # Source0-md5:	701e14a43ea5de2134d84fe0ecad50b9
 URL:		http://www.philippwesche.org/200811/whohas/intro.html
-Requires:	perl-libwww
 BuildRequires:	rpm-perlprov >= 4.1-13
+Requires:	perl-libwww
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,13 +58,9 @@ dowiedzieć:
 %prep
 %setup -q
 
-%build
-
 %install
 rm -rf $RPM_BUILD_ROOT
-for dir in %{_bindir} %{_mandir}/man1 %{_mandir}/de/man1; do
-	install -d $RPM_BUILD_ROOT${dir}
-done
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_mandir}/de/man1}
 install program/whohas $RPM_BUILD_ROOT%{_bindir}
 install usr/share/man/man1/whohas.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install usr/share/man/de/man1/whohas.1 $RPM_BUILD_ROOT%{_mandir}/de/man1
@@ -74,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/whohas
-%{_mandir}/man1/whohas*
-%lang(de) %{_mandir}/de/man1/whohas*
 %doc Changelog intro.html intro.txt html_assets
+%attr(755,root,root) %{_bindir}/whohas
+%{_mandir}/man1/whohas.1*
+%lang(de) %{_mandir}/de/man1/whohas.1*

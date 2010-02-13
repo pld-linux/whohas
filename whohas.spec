@@ -1,5 +1,6 @@
 Summary:	whohas is a command line tool that allows querying several package lists at once
 Summary(hu.UTF-8):	whohas egy parancssoros eszköz, amellyel különböző csomaglistákat kérhetsz le egyszerre
+Summary(pl.UTF-8):	Konsolowe narzędzie pozwalacjące przeszukiwać kilka list pakietów jednocześnie
 Name:		whohas
 Version:	0.24
 Release:	0.1
@@ -35,6 +36,22 @@ Azonban egyszerű felhasználó is használhatja, aki tudni akarja, hogy
  - Melyik disztribúció szállítja a keresett csomagot
  - Az adott csomag mely verzióit használják az egyes disztribúciókban,
    vagy a az adott disztribúció melyik kiadásában (csak Debian-ra).
+
+%description -l pl.UTF-8
+whohas jest konsolowym narzędziem, które pozwala przeszukiwać
+jednocześnie wiele list pakietów. Aktualnie obsługiwane dystrybucje
+to: Arch, Debian, Fedora, Gentoo, openSUSE, Slackware (and
+linuxpackages.net), Source Mage, Ubuntu, FreeBSD, NetBSD, OpenBSD,
+Fink and MacPorts. whohas jest napisany w Perlu. Głównym celem
+projektu jest stworzenie narzędzia dla opiekunów pakietów,
+pozwalającego im na łatwe znajdowanie ebuildów, pkgbuildów i innych
+definicji pakietów w innych dystrybucjach, na podstawie których mogą
+pracować nad pakietwami w swoich dystrybucjach. Jednak whohas może być
+również przydatne dla zwykłych uzytkowników, którzy chcieliby się
+dowiedzieć:
+ - która dystrybucja dostarcza potrzebne im pakiety,
+ - jaka wersja danego pakietu jest dostępna w której dystrybucji, lub
+   wydaniu dystrybucji (funkcja zaimplementowana jedynie dla Debiana).
 
 %prep
 %setup -q

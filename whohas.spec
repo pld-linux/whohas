@@ -3,12 +3,12 @@ Summary:	whohas is a command line tool that allows querying several package list
 Summary(hu.UTF-8):	whohas egy parancssoros eszköz, amellyel különböző csomaglistákat kérhetsz le egyszerre
 Summary(pl.UTF-8):	Konsolowe narzędzie pozwalacjące przeszukiwać kilka list pakietów jednocześnie
 Name:		whohas
-Version:	0.24
+Version:	0.29
 Release:	1
 License:	GPL v2
 Group:		Applications/Terminal
 Source0:	http://www.philippwesche.org/200811/whohas/%{name}-%{version}.tar.gz
-# Source0-md5:	701e14a43ea5de2134d84fe0ecad50b9
+# Source0-md5:	d12590e7d2c3c123b4cfb5b93ed4e902
 URL:		http://www.philippwesche.org/200811/whohas/intro.html
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch

@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
 Summary:	whohas is a command line tool that allows querying several package lists at once
 Summary(hu.UTF-8):	whohas egy parancssoros eszköz, amellyel különböző csomaglistákat kérhetsz le egyszerre
 Summary(pl.UTF-8):	Konsolowe narzędzie pozwalacjące przeszukiwać kilka list pakietów jednocześnie
